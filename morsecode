@@ -1,0 +1,69 @@
+//task 2.1 SIT210 - Particle Programming - First Name Blinky
+//Janvi Gupta 
+
+const pin_t MY_LED = D7;
+
+
+//create methods for line and dot to be called into the loop
+void line()
+{
+    digitalWrite(MY_LED, HIGH); //turn LED on (make volatge high)
+    delay(250ms);
+    digitalWrite(MY_LED, LOW); //turn LED on (make voltage low)
+    delay(500ms);
+}
+
+void dot()
+{
+    digitalWrite(MY_LED, HIGH); //turn LED on (make volatge high)
+    delay(100ms);
+    digitalWrite(MY_LED, LOW); //turn LED on (make voltage low)
+    delay(150ms); 
+}
+
+void setup() 
+{
+    pinMode(MY_LED, OUTPUT);
+}
+
+void loop() 
+{
+    //J
+    dot();
+    line();
+    line();
+    line();
+    
+    delay(1s); //wait for one second
+    
+    //A
+    dot();
+    line();
+    
+    delay(1s); //wait for one second
+    
+    //N
+    line();
+    dot();
+    
+    delay(1s); //wait for one second
+    
+    //V
+    dot();
+    dot();
+    dot();
+    line();
+    
+    delay(1s); //wait for one second
+    
+    //I
+    dot();
+    dot();
+    
+    //wait for 5 seconds, this long delay will let us know the program has finished 
+    //it will essentially be an indication that the morse code has performed once 
+    //and will now loop
+    delay(5s); 
+}
+
+
